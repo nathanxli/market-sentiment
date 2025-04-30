@@ -11,4 +11,6 @@ Source: https://www.kaggle.com/datasets/equinxx/stock-tweets-for-sentiment-analy
 
 [Does aggregate sentiment from tweets have any correlation or predictive power on market direction?](./market-direction/findings.md)
 
+![Daily Sentiment vs Returns Scatterplot](./market-direction/daily_sentiment_return_scatterplot.png)
 
+![3-Day Sentiment vs Returns Line Plot](./market-direction/3day_sentiment_return_line.png)

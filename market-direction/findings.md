@@ -96,3 +96,11 @@ Linear regression suggests a small posiive relationship between sentiment and re
 Logistic regression yielded low accuracy ($\approx$ 54.6%) and AUC ($\approx$ 0.6) using daily sentiment, indicating weak directional predictive power.
 
 Overall, raw daily sentiment contains some signal, but smoothing reduces its effectiveness and no strong predictive relationships were found.
+
+![Daily Sentiment vs Returns Scatterplot](./daily_sentiment_return_scatterplot.png)
+
+![Daily Sentiment vs Returns Line Plot](./1day_sentiment_return_line.png)
+
+![3-Day Sentiment vs Returns Line Plot](./3day_sentiment_return_line.png)
+
+![5-Day Sentiment vs Returns Line Plot](./5day_sentiment_return_line.png)
