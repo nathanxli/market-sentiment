@@ -20,7 +20,7 @@ $$
 Tweets were then grouped by both date and ticker to compute the average sentiment for each stock on each day. 
 
 $$
-\text{sentiment}_t = \frac{1}{N_t} \sum_{i=1}^{N_t} \text{net-sentiment}_t
+\text{sentiment}_d = \frac{1}{N_d} \sum_{i=1}^{N_d} \text{net-sentiment}_d
 $$
 
 where $N_t$ is the number of tweets on day $t$.
