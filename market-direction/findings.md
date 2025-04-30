@@ -38,7 +38,7 @@ $$
 1. Using SPY close prices:
 
 $$
-\text{return}_t = \frac{\text{close}_ t - \text{close}_ {t-1}}{\text{close}_ {t-1}}
+\text{return}_ t = \frac{\text{close}_ t - \text{close}_ {t-1}}{\text{close}_ {t-1}}
 $$
 
 2. Directional:
