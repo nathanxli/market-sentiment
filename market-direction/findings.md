@@ -16,11 +16,15 @@ $$
 \text{net-sentiment}_i = \text{positive}_i - \text{negative}_i
 $$
 
-Tweets were then grouped by date, and the mean sentiment score per day was computed:
+Tweets were then grouped by both date and ticker to compute the average sentiment for each stock on each day. 
+
+The market-wide sentiment for day $t$ was computed as a volume-weighted average across tickers:
 $$
-\text{sentiment}_t = \frac{1}{N_t} \sum_{i=1}^{N_t}  \text{net-sentiment}_i
+\text{sentiment}_t = \sum_{i=1}^{M} \left( \frac{n_{i, t}}{\sum_{j=1}^M n_{j, t}} \cdot \bar{s}_{i, t} \right)
 $$
-where $N_t$ is the number of tweets on day $t$.
+where $M$ is the number of stocks with tweets on day $t$, $n_{i, t}$ is the tweet count for stock $i$, and $\bar{s}_{i, t}$ is the mean sentiment for stock $i$.
+
+This weighing scheme amplifies the influence of stocks that receive more attention on a given day, reflecting the idea that sentiment tied to high-volume stocks may have greater market impact.
 
 Finally, the sentiment measurement was smoothed to explore the persistence of sentiment and reduce volatility.
 This was done by computing rolling averages of daily sentiment over 3 and 5 days. These rolling versions will be tested as alternative predictors.
@@ -70,3 +74,9 @@ The $\beta$, classification accuracy, and ROC curve / AUC were evaluated.
 
 
 ## Key Findings
+|Sentiment_Window|Correlation_r|Correlation_p|Linear_Beta|Linear_Intercept|Logistic_Beta|Logistic_Intercept|Accuracy|AUC|
+|-|-|-|-|-|-|-|-|-|
+|Sentiment|0.299356|1.36364e-06|0.0514315|-0.0121737|1.41742|-0.361369|0.545817|0.601944|
+|3-day|0.088005|0.165381|0.0202131|-0.00526394|0.291624|-0.115944|0.516|0.528753|
+|5-day|       0.0903185 |     0.1545      |     0.023429  |        -0.00614271 |        0.269796 |            -0.112304 |   0.512    | 0.529073 |
+
