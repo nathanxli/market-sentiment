@@ -9,4 +9,5 @@ Source: https://www.kaggle.com/datasets/equinxx/stock-tweets-for-sentiment-analy
 ![Time Series Line Graph - TSLA](./volatility-correlation/time_series_tweet_and_volatility_lineplot.png)
 
 
-Is there any correlation between changes in the stock valuation and the sentiment? How about for the overall market?
+Does aggregate sentiment from tweets predict market direction?
+
