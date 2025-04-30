@@ -18,13 +18,10 @@ $$
 
 Tweets were then grouped by both date and ticker to compute the average sentiment for each stock on each day. 
 
-The market-wide sentiment for day $t$ was computed as a volume-weighted average across tickers:
 $$
-\text{sentiment}_t = \sum_{i=1}^{M} \left( \frac{n_{i, t}}{\sum_{j=1}^M n_{j, t}} \cdot \bar{s}_{i, t} \right)
+\text{sentiment}_t = \frac{1}{N_t} \sum_{i=1}^{N_t} \text{net-sentiment}_t
 $$
-where $M$ is the number of stocks with tweets on day $t$, $n_{i, t}$ is the tweet count for stock $i$, and $\bar{s}_{i, t}$ is the mean sentiment for stock $i$.
-
-This weighing scheme amplifies the influence of stocks that receive more attention on a given day, reflecting the idea that sentiment tied to high-volume stocks may have greater market impact.
+where $N_t$ is the number of tweets on day $t$.
 
 Finally, the sentiment measurement was smoothed to explore the persistence of sentiment and reduce volatility.
 This was done by computing rolling averages of daily sentiment over 3 and 5 days. These rolling versions will be tested as alternative predictors.
@@ -78,5 +75,14 @@ The $\beta$, classification accuracy, and ROC curve / AUC were evaluated.
 |-|-|-|-|-|-|-|-|-|
 |Sentiment|0.299356|1.36364e-06|0.0514315|-0.0121737|1.41742|-0.361369|0.545817|0.601944|
 |3-day|0.088005|0.165381|0.0202131|-0.00526394|0.291624|-0.115944|0.516|0.528753|
-|5-day|       0.0903185 |     0.1545      |     0.023429  |        -0.00614271 |        0.269796 |            -0.112304 |   0.512    | 0.529073 |
+|5-day|0.0903185|0.1545|0.023429|-0.00614271|0.269796|-0.112304|0.512|0.529073|
 
+Daily sentiment shows a weak but statistically significant positive correlation with SPY market returns. (r $\approx$ 0.3, p < 0.001).
+
+Smoothed sentiment using 3-day and 5-day rolling averages showed no meaningful correlation or predictive value.
+
+Linear regression suggests a small posiive relationship between sentiment and return, but the effect size is minimal.
+
+Logistic regression yielded low accuracy ($\approx$ 54.6%) and AUC ($\approx$ 0.6) using daily sentiment, indicating weak directional predictive power.
+
+Overall, raw daily sentiment contains some signal, but smoothing reduces its effectiveness and no strong predictive relationships were found.
