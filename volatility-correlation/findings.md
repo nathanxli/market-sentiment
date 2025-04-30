@@ -60,6 +60,7 @@ In general, the similarity suggests that tweet volume is more concurrent with ma
 The dataset oftentimes had very few tweets for some of the stocks, which influenced correlation values. 
 
 Example: NOC
+
 ![NOC Volume vs Volatility Scatterplot](./NOC_volume_vs_volatility_plot.png)
 
 
