@@ -4,7 +4,9 @@ Using 25 most watched stock tickers on Yahoo Finance spanning 1 year from Q4 202
 Source: https://www.kaggle.com/datasets/equinxx/stock-tweets-for-sentiment-analysis-and-prediction
 
 ## Investigations
+[Does the daily volume of tweets about a stock have any correlation with its intraday volatility?](./volatility-correlation/findings.md)
 
-[Does the rate of tweets about a stock correspond to higher volatility?](./volatility-correlation/findings.md)
+![Time Series Line Graph - TSLA](./volatility-correlation/time_series_tweet_and_volatility_lineplot.png)
+
 
 Is there any correlation between changes in the stock valuation and the sentiment? How about for the overall market?

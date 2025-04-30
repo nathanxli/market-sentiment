@@ -41,12 +41,27 @@ While most correlations are weak to moderate, many are statistically significant
 - TSLA and NFLX stand out as stocks where tweet column relably reflect or conincides with high volatililty
 - Public attention seems to track media-driven or speculative movement in popular tech stocks
 
+![TSLA Volume vs Volatility Plot](./TSLA_volume_vs_volatility_plot.png)
+
+![Time Series Line Graph - TSLA](./time_series_tweet_and_volatility_lineplot.png)
+
+
 ### 2. Lagged Correlation Observations
 In addition to same-day correlation, a test was done to see whether tweet volume might precede changes in volatility by examining correlation between tweet count on day $t$ and volatility on day $t+7$.
 
 For most stocks, the lagged correlation was similar in magnitude to the same-day correlation.
 
 In general, the similarity suggests that tweet volume is more concurrent with market volatility than it is predictive.
+
+![Same-day vs Lagged Heatmap](./same_day_vs_lagged_heatmap.png)
+
+
+## Limitations
+The dataset oftentimes had very few tweets for some of the stocks, which influenced correlation values. 
+
+Example: NOC
+![NOC Volume vs Volatility Scatterplot](./NOC_volume_vs_volatility_plot.png)
+
 
 ## Conclusion
 While tweet volume and volatility clearly move together for some stocks, there is little evidence that tweet volume leads volatililty in a statistically strong way than it simply reflects it.
